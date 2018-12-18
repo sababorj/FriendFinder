@@ -2,10 +2,12 @@ var friendsData = require('../data/friends');
 
 module.exports = function(app){
 
+    // get on this rout shows all the friends store in the application 
     app.get('/api/friends', (req,res) => {
         res.json(friendsData);
     })
 
+    // post on this rout return a friend match who has the closest score to the posted person
     app.post('/api/friends', (req,res) => {
         // find the closest score match
         var totalScores = []; 
